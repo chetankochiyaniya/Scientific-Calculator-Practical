@@ -1,39 +1,47 @@
-
-body{
+body {
     font-size: 15px;
 }
-.container{
-    background-color:slategrey
+
+.container {
+    background-color: slategrey
 }
-.btn-width{
-    width: inherit;
+
+.btn-width {
+    width: -webkit-fill-available;
     height: 36px;
-    line-height:normal;
+    line-height: normal;
 }
-.btn-width2{
-width: -webkit-fill-available;
-height: 36px;
-line-height:normal;
+
+.btn-width2 {
+    width: -webkit-fill-available;
+    height: 36px;
+    line-height: normal;
 }
 
 
-.cal-width{
+.cal-width {
     width: 400px;
 }
 
-input{
-width: inherit;
-height: 70px;
-text-align: end;
+input {
+    width: inherit;
+    height: 70px;
+    text-align: end;
 }
-.dropdown-toggle::after{
+
+.dropdown-toggle::after {
     content: none;
 }
 
-.col-5{
+.col-5 {
     width: 40.050% !important;
 }
 
-.col-2{
-  width: 20.056667%;
+.col-2 {
+    width: 20.056667%;
+}
+
+.dropdown-menu {
+    min-width: 230px;
+    padding: 1px;
 }
