@@ -15,10 +15,7 @@ width: -webkit-fill-available;
 height: 36px;
 line-height:normal;
 }
-/* border hidden */
-.b-h{
-    border: none;
-}
+
 
 .cal-width{
     width: 400px;
@@ -32,7 +29,11 @@ text-align: end;
 .dropdown-toggle::after{
     content: none;
 }
-trigo-btn{
-    background-color: #EFEFEF !important;
-    color: black !important;
+
+.col-5{
+    width: 40.050% !important;
+}
+
+.col-2{
+  width: 20.056667%;
 }
