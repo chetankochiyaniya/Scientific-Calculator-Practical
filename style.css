@@ -29,3 +29,10 @@ width: inherit;
 height: 70px;
 text-align: end;
 }
+.dropdown-toggle::after{
+    content: none;
+}
+trigo-btn{
+    background-color: #EFEFEF !important;
+    color: black !important;
+}
