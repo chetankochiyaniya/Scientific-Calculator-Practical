@@ -1,0 +1,31 @@
+
+body{
+    font-size: 15px;
+}
+.container{
+    background-color:slategrey
+}
+.btn-width{
+    width: inherit;
+    height: 36px;
+    line-height:normal;
+}
+.btn-width2{
+width: -webkit-fill-available;
+height: 36px;
+line-height:normal;
+}
+/* border hidden */
+.b-h{
+    border: none;
+}
+
+.cal-width{
+    width: 400px;
+}
+
+input{
+width: inherit;
+height: 70px;
+text-align: end;
+}
