@@ -1,5 +1,5 @@
 function elem(val){
-    display.value+=val;
+        display.value+=val;
 }
 
 function equal()
@@ -8,6 +8,11 @@ function equal()
 }
 
 function clear_val(){
-    console.log("cccc")
     display.value = " ";
+}
+
+function back() {
+    var val = display.value;
+    console.log("back function")
+    display.value = val.substr(0, val.length - 1);
 }
