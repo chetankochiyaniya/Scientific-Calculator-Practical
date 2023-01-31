@@ -25,12 +25,16 @@ h1{
 }
 .trigo-btn-width{
     width: -webkit-fill-available;
-    height: 36px;
+    height: 35px;
     line-height: normal;
     background-color:white;
     border: none;
 }
-
+.hyp-btn {
+    width: fit-content;
+    height: 36px;
+    line-height: normal;
+}
 
 .cal-width {
     width: 400px;
@@ -57,4 +61,13 @@ input {
 .dropdown-menu {
     min-width: 230px;
     padding: 1px;
+}
+
+.hyp-menu{
+   inset:  0px auto auto -155px !important;
+   padding: 0px !important;
+}
+
+.menu-size{
+    transform: translate3d(0px, 35px, 0px) !important;
 }

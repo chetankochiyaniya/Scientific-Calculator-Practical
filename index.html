@@ -49,33 +49,32 @@
                         <div class="dropdown">
                             <button class="btn-width2 dropdown-toggle" type="button" id="dropdownMenuButton1"
                                 data-bs-toggle="dropdown" aria-expanded="false">
-                                <span style="font-size: large;">&#x25FF;</span><span>Trigonometry&nbsp;<i
+                                <span style="font-size: large;">&#x25FF;&nbsp;</span><span>Trigonometry&nbsp;<i
                                         class="fa-solid fa-chevron-down"></i></span>
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                                 <div class="d-flex">
-                                    <button class="trigo-btn-width">sin</button>
-                                    <button class="trigo-btn-width">cos</button>
-                                    <button class="trigo-btn-width">tan</button>
+                                    <button class="trigo-btn-width" onclick="trigo(value)" value="sin">sin</button>
+                                    <button class="trigo-btn-width" onclick="trigo(value)" value="cos">cos</button>
+                                    <button class="trigo-btn-width" onclick="trigo(value)" value="tan">tan</button>
                                 </div>
                                 <div class="d-flex">
-                                    <button class="trigo-btn-width">sec</button>
-                                    <button class="trigo-btn-width">csec</button>
-                                    <button class="trigo-btn-width">cot</button>
+                                    <button class="trigo-btn-width" onclick="trigo(value)" value="sec">sec</button>
+                                    <button class="trigo-btn-width" onclick="trigo(value)" value="csc">csc</button>
+                                    <button class="trigo-btn-width" onclick="trigo(value)" value="cot">cot</button>
                                 </div>
                                 <div class="d-flex">
-                                    <button class="trigo-btn-width">sin<sup>-1</sup></button>
-                                    <button class="trigo-btn-width">cos<sup>-1</sup></button>
-                                    <button class="trigo-btn-width">tan<sup>-1</sup></button>
+                                    <button class="trigo-btn-width" onclick="trigo(value)" value="asin">sin<sup>-1</sup></button>
+                                    <button class="trigo-btn-width" onclick="trigo(value)" value="acos">cos<sup>-1</sup></button>
+                                    <button class="trigo-btn-width" onclick="trigo(value)" value="atan">tan<sup>-1</sup></button>
                                 </div>
                                 <div class="d-flex">
-                                    <button class="trigo-btn-width">sec<sup>-1</sup></button>
-                                    <button class="trigo-btn-width">csec<sup>-1</sup></button>
-                                    <button class="trigo-btn-width">cot<sup>-1</sup></button>
+                                    <button class="trigo-btn-width" onclick="trigo(value)" value="asec">sec<sup>-1</sup></button>
+                                    <button class="trigo-btn-width" onclick="trigo(value)" value="acsc">csc<sup>-1</sup></button>
+                                    <button class="trigo-btn-width" onclick="trigo(value)" value="acot">cot<sup>-1</sup></button>
                                 </div>
                             </div>
                         </div>
-
                     </div>
                     <div class="col-5">
                         <div class="dropdown">
@@ -84,46 +83,84 @@
                                 <span style="font-size: large;">&#402;&nbsp;</span><span>Function&nbsp;<i
                                         class="fa-solid fa-chevron-down"></i></span>
                             </button>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
+                            <div class="dropdown-menu menu-size" aria-labelledby="dropdownMenuButton1">
+                                <div class="d-flex">
+                                    <button class="trigo-btn-width" onclick="abs_val()">|x|</button>
+                                    <button class="trigo-btn-width" onclick="floor()">&LeftFloor;x&RightFloor;</button>
+                                    <button class="trigo-btn-width" onclick="ceil()">&LeftCeiling;x&RightCeiling;</button>
+                                </div>
+                                <div class="d-flex">
+                                    <button class="trigo-btn-width" onclick="rand()">rand</button>
+                                    <button class="trigo-btn-width" onclick="dms()"><i class="fa-solid fa-arrow-right"></i>dms</button>
+                                    <button class="trigo-btn-width" onclick="deg()"><i class="fa-solid fa-arrow-right"></i>deg</button>
+                                </div>
+                            </div>
                         </div>
 
+                    </div>
+                    <div class="col-2">
+                        <div class="dropdown">
+                            <button class="hyp-btn dropdown-toggle" type="button" id="dropdownMenuButton1"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <span style="font-size: large;">&#x25FF;&nbsp;</span><span>Hyp&nbsp;<i
+                                        class="fa-solid fa-chevron-down"></i></span>
+                            </button>
+                            <div class="dropdown-menu hyp-menu" aria-labelledby="dropdownMenuButton1">
+                                <div class="d-flex">
+                                    <button class="trigo-btn-width" onclick="trigo(value)" value="sinh">sinh</button>
+                                    <button class="trigo-btn-width" onclick="trigo(value)" value="cosh">cosh</button>
+                                    <button class="trigo-btn-width" onclick="trigo(value)" value="tanh">tanh</button>
+                                </div>
+                                <div class="d-flex">
+                                    <button class="trigo-btn-width" onclick="trigo(value)" value="sech">sech</button>
+                                    <button class="trigo-btn-width" onclick="trigo(value)" value="csch">csch</button>
+                                    <button class="trigo-btn-width" onclick="trigo(value)" value="coth">coth</button>
+                                </div>
+                                <div class="d-flex">
+                                    <button class="trigo-btn-width" onclick="trigo(value)" value="asinh">sinh<sup>-1</sup></button>
+                                    <button class="trigo-btn-width" onclick="trigo(value)" value="acosh">cosh<sup>-1</sup></button>
+                                    <button class="trigo-btn-width" onclick="trigo(value)" value="atanh">tanh<sup>-1</sup></button>
+                                </div>
+                                <div class="d-flex">
+                                    <button class="trigo-btn-width" onclick="trigo(value)" value="asech">sech<sup>-1</sup></button>
+                                    <button class="trigo-btn-width" onclick="trigo(value)" value="acsch">csch<sup>-1</sup></button>
+                                    <button class="trigo-btn-width" onclick="trigo(value)" value="acoth">coth<sup>-1</sup></button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="row ">
                 <div class="col d-flex">
                     <button class="btn-width">2<sup>nd</sup></button>
-                    <button class="btn-width">&pi;</button>
-                    <button class="btn-width">e</button>
+                    <button class="btn-width" onclick="pi_val()">&pi;</button>
+                    <button class="btn-width" onclick="euler_num()">e</button>
                     <button class="btn-width" onclick="clear_val()">CE</button>
                     <button class="btn-width" onclick="back()"><i class="material-icons">backspace</i></button>
                 </div>
             </div>
             <div class="row ">
                 <div class="col d-flex">
-                    <button class="btn-width">x<sup>2</sup></button>
-                    <button class="btn-width"><sup>1</sup>&#8725;<sub>x</sub></button>
-                    <button class="btn-width">|x|</button>
-                    <button class="btn-width">exp</button>
-                    <button class="btn-width">mod</button>
+                    <button class="btn-width" onclick="square()">x<sup>2</sup></button>
+                    <button class="btn-width" onclick="div_by_one()"><sup>1</sup>&#8725;<sub>x</sub></button>
+                    <button class="btn-width" onclick="abs_val()">|x|</button>
+                    <button class="btn-width" onclick="exp_func()">exp</button>
+                    <button class="btn-width" onclick="elem(value)" value="%">mod</button>
                 </div>
             </div>
             <div class="row ">
                 <div class="col d-flex">
-                    <button class="btn-width">&#8730;x</button>
-                    <button class="btn-width">(</button>
-                    <button class="btn-width">)</button>
-                    <button class="btn-width"><i>n</i>!</button>
+                    <button class="btn-width" onclick="square_root()">&#8730;x</button>
+                    <button class="btn-width" onclick="elem(value)" value="(">(</button>
+                    <button class="btn-width" onclick="elem(value)" value=")">)</button>
+                    <button class="btn-width" onclick="fact()"><i>n</i>!</button>
                     <button class="btn-width" onclick="elem(value)" value="/">&#247;</button>
                 </div>
             </div>
             <div class="row ">
                 <div class="col d-flex">
-                    <button class="btn-width">x<sup>y</sup></button>
+                    <button class="btn-width" onclick="yRoot()">x<sup>y</sup></button>
                     <button class="btn-width" onclick="elem(value)" value="7">7</button>
                     <button class="btn-width" onclick="elem(value)" value="8">8</button>
                     <button class="btn-width" onclick="elem(value)" value="9">9</button>
@@ -132,7 +169,7 @@
             </div>
             <div class="row ">
                 <div class="col d-flex">
-                    <button class="btn-width" onclick="elem(value)" value="10">10<sup>x</sup></button>
+                    <button class="btn-width" onclick="xRoot()" >10<sup>x</sup></button>
                     <button class="btn-width" onclick="elem(value)" value="4">4</button>
                     <button class="btn-width" onclick="elem(value)" value="5">5</button>
                     <button class="btn-width" onclick="elem(value)" value="6">6</button>
@@ -141,7 +178,7 @@
             </div>
             <div class="row ">
                 <div class="col d-flex">
-                    <button class="btn-width" >log</button>
+                    <button class="btn-width" onclick="logarithm(value)" value="ten">log</button>
                     <button class="btn-width" onclick="elem(value)" value="1">1</button>
                     <button class="btn-width" onclick="elem(value)" value="2">2</button>
                     <button class="btn-width" onclick="elem(value)" value="3">3</button>
@@ -150,10 +187,10 @@
             </div>
             <div class="row ">
                 <div class="col d-flex">
-                    <button class="btn-width">ln</button>
-                    <button class="btn-width"><sup>&#43;</sup>&#8725;<sub>&#8722;</sub></button>
+                    <button class="btn-width" onclick="logarithm(value)" value="e">ln</button>
+                    <button class="btn-width" onclick="inverseSign()"><sup>&#43;</sup>&#8725;<sub>&#8722;</sub></button>
                     <button class="btn-width" onclick="elem(value)" value="0">0</button>
-                    <button class="btn-width">.</button>
+                    <button class="btn-width" onclick="elem(value)" value=".">.</button>
                     <button class="btn-width" onclick="equal()">&#61;</button>
                 </div>
             </div>
