@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,111 +9,149 @@
     <link rel="icon" type="image/icon" href="./img/favicon.webp">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./style.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="./index.js" defer></script>
 </head>
+
 <body>
     <div class="container-fluid d-flex justify-content-center mt-5">
         <div class="container cal-width p-2">
-        <div class="row">
-            <div class="col">
-                <input type="text" name="display" id="display" disabled>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12 d-flex">
-                <div class="col-2">
-                    <button class="btn-width2">DEG</button>
-                </div>
-                <div class="col-2">
-                    <button class="btn-width2">F-E</button>
+            <div class="row">
+                <div class="col">
+                    <input type="text" name="display" id="display" disabled>
                 </div>
             </div>
-        </div>
-        <div class="row ">
-            <div class="col d-flex">
-                <button class="btn-width">MC</button>
-                <button class="btn-width">MR</button>
-                <button class="btn-width">M+</button>
-                <button class="btn-width">M-</button>
-                <button class="btn-width">MS</button>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12 d-flex">
-                <div class="col-5">
-                    <button class="btn-width2"><span style="font-size: x-large;">&#8895;&nbsp;</span>Trigonometry&nbsp;<span style="font-size: x-large;" >&#8964;&nbsp;</span></button>
-                </div>
-                <div class="col-4">
-                    <button class="btn-width2"> <span style="font-size: x-large;">&#402;&nbsp;</span> Function</button>
+            <div class="row">
+                <div class="col-12 d-flex">
+                    <div class="col-2">
+                        <button class="btn-width2">DEG</button>
+                    </div>
+                    <div class="col-2">
+                        <button class="btn-width2">F-E</button>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="row ">
-            <div class="col d-flex">
-                <button class="btn-width">2<sup>nd</sup></button>
-                <button class="btn-width">&pi;</button>
-                <button class="btn-width">e</button>
-                <button class="btn-width" onclick="clear_val()">C</button>
-                <button class="btn-width" onclick="back()"><i class="material-icons">backspace</i></button>
+            <div class="row ">
+                <div class="col d-flex">
+                    <button class="btn-width">MC</button>
+                    <button class="btn-width">MR</button>
+                    <button class="btn-width">M+</button>
+                    <button class="btn-width">M-</button>
+                    <button class="btn-width">MS</button>
+                </div>
             </div>
-        </div>
-        <div class="row ">
-            <div class="col d-flex">
-                <button class="btn-width">x<sup>2</sup></button>
-                <button class="btn-width"><sup>1</sup>&#8725;<sub>x</sub></button>
-                <button class="btn-width">|x|</button>
-                <button class="btn-width">exp</button>
-                <button class="btn-width">mod</button>
+            <div class="row">
+                <div class="col-12 d-flex">
+                    <div class="col-5">
+                        <div class="dropdown">
+                            <button class="btn-width2 dropdown-toggle" type="button" id="dropdownMenuButton1"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <span style="font-size: large;">&#x25FF;</span><span>Trigonometry&nbsp;<i
+                                        class="fa-solid fa-chevron-down"></i></span>
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                <div class="d-flex">
+                                    <button class="btn-width">MS</button>
+                                    <button class="btn-width">MS</button>
+                                    <button class="btn-width">MS</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-5">
+                        <div class="dropdown">
+                            <button class="btn-width2 dropdown-toggle" type="button" id="dropdownMenuButton1"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <span style="font-size: large;">&#402;&nbsp;</span><span>Function&nbsp;<i
+                                        class="fa-solid fa-chevron-down"></i></span>
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="row ">
-            <div class="col d-flex">
-                <button class="btn-width">&#8730;x</button>
-                <button class="btn-width">(</button>
-                <button class="btn-width">)</button>
-                <button class="btn-width"><i>n</i>!</button>
-                <button class="btn-width" onclick="elem(value)" value="/">&#247;</button>
+            <div class="row ">
+                <div class="col d-flex">
+                    <button class="btn-width">2<sup>nd</sup></button>
+                    <button class="btn-width">&pi;</button>
+                    <button class="btn-width">e</button>
+                    <button class="btn-width" onclick="clear_val()">CE</button>
+                    <button class="btn-width"><i class="material-icons">backspace</i></button>
+                </div>
             </div>
-        </div>
-        <div class="row ">
-            <div class="col d-flex">
-                <button class="btn-width">x<sup>y</sup></button>
-                <button class="btn-width" onclick="elem(value)" value="7">7</button>
-                <button class="btn-width" onclick="elem(value)"  value="8">8</button>
-                <button class="btn-width" onclick="elem(value)"  value="9">9</button>
-                <button class="btn-width" onclick="elem(value)" value="*">&#215;</button>
-            </div> 
-        </div>
-        <div class="row ">
-            <div class="col d-flex">
-                <button class="btn-width">10<sup>x</sup></button>
-                <button class="btn-width" onclick="elem(value)" value="4">4</button>
-                <button class="btn-width" onclick="elem(value)" value="5">5</button>
-                <button class="btn-width" onclick="elem(value)" value="6">6</button>
-                <button class="btn-width" onclick="elem(value)" value="-">&#8722;</button>
+            <div class="row ">
+                <div class="col d-flex">
+                    <button class="btn-width">x<sup>2</sup></button>
+                    <button class="btn-width"><sup>1</sup>&#8725;<sub>x</sub></button>
+                    <button class="btn-width">|x|</button>
+                    <button class="btn-width">exp</button>
+                    <button class="btn-width">mod</button>
+                </div>
             </div>
-        </div>
-        <div class="row ">
-            <div class="col d-flex">
-                <button class="btn-width">log</button>
-                <button class="btn-width" onclick="elem(value)" value="1">1</button>
-                <button class="btn-width" onclick="elem(value)" value="2">2</button>
-                <button class="btn-width" onclick="elem(value)" value="3">3</button>
-                <button class="btn-width" onclick="elem(value)" value="+">&#43;</button>
+            <div class="row ">
+                <div class="col d-flex">
+                    <button class="btn-width">&#8730;x</button>
+                    <button class="btn-width">(</button>
+                    <button class="btn-width">)</button>
+                    <button class="btn-width"><i>n</i>!</button>
+                    <button class="btn-width">&#247;</button>
+                </div>
+            </div>
+            <div class="row ">
+                <div class="col d-flex">
+                    <button class="btn-width">x<sup>y</sup></button>
+                    <button class="btn-width" onclick="elem(value)" value="7">7</button>
+                    <button class="btn-width" onclick="elem(value)" value="8">8</button>
+                    <button class="btn-width" onclick="elem(value)" value="9">9</button>
+                    <button class="btn-width" onclick="elem(value)" value="*">&#215;</button>
+                </div>
+            </div>
+            <div class="row ">
+                <div class="col d-flex">
+                    <button class="btn-width" value="10">10<sup>x</sup></button>
+                    <button class="btn-width">4</button>
+                    <button class="btn-width">5</button>
+                    <button class="btn-width">6</button>
+                    <button class="btn-width">&#8722;</button>
+                </div>
+            </div>
+            <div class="row ">
+                <div class="col d-flex">
+                    <button class="btn-width">log</button>
+                    <button class="btn-width">1</button>
+                    <button class="btn-width">2</button>
+                    <button class="btn-width">3</button>
+                    <button class="btn-width">&#43;</button>
+                </div>
+            </div>
+            <div class="row ">
+                <div class="col d-flex">
+                    <button class="btn-width">ln</button>
+                    <button class="btn-width"><sup>&#43;</sup>&#8725;<sub>&#8722;</sub></button>
+                    <button class="btn-width">0</button>
+                    <button class="btn-width">.</button>
+                    <button class="btn-width" onclick="equal()">&#61;</button>
+                </div>
             </div>
         </div>
         <div class="row ">
             <div class="col d-flex">
                 <button class="btn-width">ln</button>
                 <button class="btn-width"><sup>&#43;</sup>&#8725;<sub>&#8722;</sub></button>
-                <button class="btn-width" onclick="elem(value)" value="0">0</button>
+                <button class="btn-width">0</button>
                 <button class="btn-width">.</button>
                 <button class="btn-width" onclick="equal()">&#61;</button>
             </div>
         </div>
     </div>
-    </div>
 </body>
+
 </html>
