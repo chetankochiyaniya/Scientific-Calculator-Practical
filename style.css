@@ -47,6 +47,7 @@ input {
     width: inherit;
     height: 70px;
     text-align: end;
+    font-size: 30px;
 }
 
 .dropdown-toggle::after {
