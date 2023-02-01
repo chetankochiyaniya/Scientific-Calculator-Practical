@@ -1,5 +1,6 @@
 body {
     font-size: 15px;
+    background-color: #d6c7c7;
 }
 
 h1{
@@ -73,7 +74,7 @@ input {
 }
 
 .btn2-show{
-    display: none;
+    d: none;
 }
 button:hover {
     background-color: rgb(146, 199, 214) !important;
