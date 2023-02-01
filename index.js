@@ -1,22 +1,24 @@
-function elem(val){
-        display.value+=val;
-        console.log(display.value)
+function elem(val) {
+    display.value += val;
+    console.log(display.value)
 }
 
-function equal()
-{
-    if((display.value).includes("^")) {
-       display.value = (display.value).replace("^","**")
-    } 
-     if (display.value.includes("log_base_y")) {
-        let y = log_base_y(display.value);
-        display.value = (Math.log(y[0]) / Math.log(y[1])).toString();
+function equal() {
+    if ((display.value).includes("^")) {
+        display.value = (display.value).replace("^", "**")
     }
-        display.value = eval( display.value)
-   
+    if (display.value.includes("ylog")) {
+        let z = (display.value).search("ylog");
+        let y = (display.value).substring(0, z);
+        let x = (display.value).substring(z + 4, (display.value).length);
+        display.value = (Math.log(x) / Math.log(y)).toString();
+
+    }
+    display.value = eval(display.value)
+
 }
 
-function clear_val(){
+function clear_val() {
     display.value = " ";
 }
 
@@ -26,104 +28,175 @@ function back() {
     display.value = val.substr(0, val.length - 1);
 }
 
-var fact_ans=1,num;
-function fact(){
-       num = parseInt(display.value)
-      while (num!=0) {
+var fact_ans = 1, num;
+function fact() {
+    num = parseInt(display.value)
+    while (num != 0) {
         fact_ans = fact_ans * num;
         num--;
-      }
-      display.value = fact_ans.toString()
+    }
+    display.value = fact_ans.toString()
 }
 
-function inverseSign(){
+function inverseSign() {
     display.value = -1 * display.value;
 }
 
-function exp_func(){
+function exp_func() {
     display.value = Math.exp(display.value)
 }
 
-function abs_val(){
+function abs_val() {
     display.value = Math.abs(display.value)
 }
 function div_by_one() {
     display.value = 1 / (display.value);
 }
 
-function square(){
+function square() {
     display.value = display.value * display.value;
 }
 
-function square_root(){
+function square_root() {
     display.value = Math.sqrt(display.value);
 }
 
-function x_pow_y(){
+function x_pow_y() {
     display.value = display.value + "^";
 }
 
-function ten_pow_x(){
+function ten_pow_x() {
     display.value = Math.pow(10, display.value)
 }
 
-function logarithm(base){
-    if(base=="ten"){
+function logarithm(base) {
+    if (base == "ten") {
         display.value = Math.log10(display.value)
     }
-    else
-    {
+    else {
         display.value = Math.log(display.value)
     }
-    
+
 }
 
-function euler_num(){
+function euler_num() {
     display.value = Math.E
 }
 
-function pi_val(){
+function pi_val() {
     display.value = Math.PI
 }
 
-function trigo(t){
+var z = 1;
+function radian() {
+    if (z == 1) {
+        document.getElementById('degree').innerHTML = "RAD";
+        z = 0;
+    }
+    else {
+        document.getElementById('degree').innerHTML = "DEG";
+        z = 1;
+    }
+}
+
+function trigo(t) {
     console.log("test", t)
-    switch(t){
+    switch (t) {
         case "sin":
-            display.value = (Math.sin((Math.PI / 180) * display.value))
+            if (z == 1) {
+                display.value = (Math.sin((Math.PI / 180) * Number(display.value))).toFixed(5);
+            }
+            else {
+                display.value = (Math.sin(display.value)).toFixed(5);
+            }
             break;
         case "cos":
-            display.value = (Math.cos(Math.PI / 180 * display.value))
+            if (z) {
+                display.value = (Math.cos(Math.PI / 180 * display.value));
+            }
+            else {
+                display.value = Math.cos(display.value);
+            }
             break;
         case "tan":
-            display.value = (Math.tan(Math.PI / 180 * display.value))
+            if (z) {
+                display.value = (Math.tan(Math.PI / 180 * display.value));
+            }
+            else {
+                display.value = Math.tan(display.value);
+            }
             break;
         case "sec":
-            display.value = (1 / Math.cos(Math.PI / 180 * display.value))
+            if (z) {
+                display.value = (1 / Math.cos(Math.PI / 180 * display.value));
+            }
+            else {
+                display.value = 1 / Math.cos(display.value);
+            }
             break;
         case "csc":
-            display.value = (1 / Math.sin(Math.PI / 180 * display.value))
+            if (z) {
+                display.value = (1 / Math.sin(Math.PI / 180 * display.value));
+            }
+            else {
+                display.value = 1 / Math.sin(display.value);
+            }
             break;
         case "cot":
-            display.value = 1 / (Math.tan(Math.PI / 180 * display.value))
+            if (z) {
+                display.value = 1 / (Math.tan(Math.PI / 180 * display.value));
+            }
+            else {
+                display.value = 1 / Math.tan(display.value);
+            }
             break;
         case "asin":
-            display.value = (180 / Math.PI * Math.asin(display.value))
+            if (z) {
+                display.value = (180 / Math.PI * Math.asin(display.value));
+            }
+            else {
+                display.value = Math.asin(display.value);
+            }
             break;
         case "acos":
-            display.value = (Math.acos(Math.PI / 180 * display.value))
+            if (z) {
+                display.value = (180 / Math.PI * Math.acos(display.value));
+            }
+            else {
+                display.value = Math.acos(display.value);
+            }
             break;
         case "atan":
-            display.value = (Math.atan(Math.PI / 180 * display.value))
+            if (z) {
+                display.value = (180 / Math.PI * Math.atan(display.value));
+            }
+            else {
+                display.value = Math.atan(display.value);
+            }
             break;
         case "asec":
-            display.value = (1 / Math.acos(Math.PI / 180 * display.value))
+            if (z) {
+                display.value = (180 / Math.PI * (Math.acos(1 / display.value)));
+            }
+            else {
+                display.value = 1 / Math.acos(display.value);
+            }
             break;
         case "acsc":
-            display.value = (1 / Math.asin(Math.PI / 180 * display.value))
+            if (z) {
+                display.value = (180 / Math.PI * (Math.asin(1 / display.value)));
+            }
+            else {
+                display.value = 1 / Math.asin(display.value);
+            }
             break;
         case "acot":
-            display.value = 1 / (Math.atan(Math.PI / 180 * display.value))
+            if (z) {
+                display.value = (180 / Math.PI * (Math.atan(1 / display.value)));
+            }
+            else {
+                display.value = 1 / Math.atan(display.value);
+            }
             break;
         case "sinh":
             display.value = (Math.sinh(display.value))
@@ -135,13 +208,13 @@ function trigo(t){
             display.value = (Math.tanh(display.value))
             break;
         case "sech":
-            display.value = (1/Math.cosh(display.value))
+            display.value = (1 / Math.cosh(display.value))
             break;
         case "csch":
-            display.value = (1/Math.sinh(display.value))
+            display.value = (1 / Math.sinh(display.value))
             break;
         case "coth":
-            display.value = (1/Math.tanh(display.value))
+            display.value = (1 / Math.tanh(display.value))
             break;
         case "asinh":
             display.value = (Math.asinh(display.value));
@@ -153,16 +226,16 @@ function trigo(t){
             display.value = (Math.atanh(display.value))
             break;
         case "asech":
-            display.value = (1/Math.acosh(display.value))
+            display.value = (1 / Math.acosh(display.value))
             break;
         case "acsch":
-            display.value = (1/Math.asinh(display.value))
+            display.value = (1 / Math.asinh(display.value))
             break;
         case "acoth":
-            display.value = (1/Math.atanh(display.value))
+            display.value = (1 / Math.atanh(display.value))
             break;
 
-        
+
     }
 }
 
@@ -181,9 +254,9 @@ function rand() {
 function dms() {
     let dms = Number(display.value);
     let deg = parseInt(dms);
-    let sec = (dms.toFixed(4) - dms.toFixed(2))*10000;
-    let min = (dms.toFixed(2) - deg)*100;
-    console.log(sec +" "+min);
+    let sec = (dms.toFixed(4) - dms.toFixed(2)) * 10000;
+    let min = (dms.toFixed(2) - deg) * 100;
+    console.log(sec + " " + min);
     deg = deg + min / 60 + sec / 3600;
     display.value = deg.toFixed(2).toString();
 }
@@ -203,7 +276,7 @@ function cube_root() {
     display.value = Math.pow(display.value, 1 / 3);
 }
 
-function x_pow_four(){
+function x_pow_four() {
     display.value = Math.pow(display.value, 4);
 }
 
@@ -211,17 +284,11 @@ function two_pow_x() {
     display.value = Math.pow(2, display.value);
 }
 
-function log_base_y(value) {
-    let z = value.search("log_base_y");
-    let y = value.substring(0, z);
-    let x = value.substring(z + 4, value.length);
-    return [x, y]
-}
 function e_pow_x() {
     display.value = Math.exp(display.value);
 }
 
-var f=1;
+var f = 1;
 function change_btn() {
     if (f) {
         for (let element of document.getElementsByClassName('btn1-show')) {
@@ -244,7 +311,7 @@ function change_btn() {
 }
 
 var k = 1;
-function change_btn_color() {
+function change_btn_color(agr) {
     if (k == 1) {
         document.getElementById("change_btn").style.backgroundColor = "rgb(146, 199, 214)"
         k = 0;
@@ -277,7 +344,7 @@ function m_clear() {
 
 function m_read() {
     display.value = memory[memory.length - 1].toString();
-    console.log("read",diplay.value)
+    console.log("read", diplay.value)
 }
 
 function m_plus() {
@@ -299,5 +366,29 @@ function m_minus() {
     }
     else {
         memory[memory.length - 1] -= parseFloat(display.value);
+    }
+}
+
+var c = 1;
+function change_color() {
+    if (c == 1) {
+        document.getElementById("degree").style.backgroundColor = "rgb(146, 199, 214)"
+        c = 0;
+    }
+    else {
+        document.getElementById("degree").style.backgroundColor = "#EFEFEF";
+        c = 1;
+    }
+}
+
+var w = 1
+function fe_func() {
+    if (w) {
+        display.value = Number(display.value).toString();
+        w = 0;
+    }
+    else {
+        display.value = Number(display.value).toExponential().toString();
+        w = 1;
     }
 }
