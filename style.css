@@ -3,7 +3,7 @@ body {
     background-color: #d6c7c7;
 }
 
-h1{
+h1 {
     text-align: center;
     margin-top: 50px;
     font-family: 'Itim';
@@ -24,13 +24,15 @@ h1{
     height: 36px;
     line-height: normal;
 }
-.trigo-btn-width{
+
+.trigo-btn-width {
     width: -webkit-fill-available;
     height: 35px;
     line-height: normal;
-    background-color:white;
+    background-color: white;
     border: none;
 }
+
 .hyp-btn {
     width: fit-content;
     height: 36px;
@@ -64,18 +66,19 @@ input {
     padding: 1px;
 }
 
-.hyp-menu{
-   inset:  0px auto auto -155px !important;
-   padding: 0px !important;
+.hyp-menu {
+    inset: 0px auto auto -155px !important;
+    padding: 0px !important;
 }
 
-.menu-size{
+.menu-size {
     transform: translate3d(0px, 35px, 0px) !important;
 }
 
-.btn2-show{
+.btn2-show {
     d: none;
 }
+
 button:hover {
     background-color: rgb(146, 199, 214) !important;
-  }
+}
