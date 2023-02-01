@@ -1,3 +1,23 @@
+let keys = ['1','2','3','4','5','6','7','8','9','0','+','-','*','/','%','^','(',')','.'];
+document.addEventListener('keydown', (event) => {
+    let k = event.key;
+    console.log(k);   
+    if(k=='Delete'){
+        clear_val();
+    }
+    if(k=='Backspace'){
+        back();
+    }
+    if(k=='Enter'||k=='='){
+        if(display.value)
+          equal();
+    }
+    if (keys.includes(k)) {
+        display.value += k ;
+    }
+  });
+
+
 function elem(val) {
     display.value += val;
     console.log(display.value)
