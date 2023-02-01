@@ -6,9 +6,12 @@ function elem(val){
 function equal()
 {
     if((display.value).includes("^")) {
-
        display.value = (display.value).replace("^","**")
     } 
+     if (display.value.includes("log_base_y")) {
+        let y = log_base_y(display.value);
+        display.value = (Math.log(y[0]) / Math.log(y[1])).toString();
+    }
         display.value = eval( display.value)
    
 }
@@ -56,11 +59,11 @@ function square_root(){
     display.value = Math.sqrt(display.value);
 }
 
-function yRoot(){
+function x_pow_y(){
     display.value = display.value + "^";
 }
 
-function xRoot(){
+function ten_pow_x(){
     display.value = Math.pow(10, display.value)
 }
 
@@ -190,4 +193,111 @@ function deg() {
     let minutes = (deg - parseInt(deg)) * 60;
     let seconds = (minutes - parseInt(minutes)) * 60;
     display.value = parseFloat(`${parseInt(deg)}.${parseInt(minutes)}${parseInt(seconds)}`).toFixed(4).toString();
+}
+
+function cube() {
+    display.value = Math.pow(display.value, 3);
+}
+
+function cube_root() {
+    display.value = Math.pow(display.value, 1 / 3);
+}
+
+function x_pow_four(){
+    display.value = Math.pow(display.value, 4);
+}
+
+function two_pow_x() {
+    display.value = Math.pow(2, display.value);
+}
+
+function log_base_y(value) {
+    let z = value.search("log_base_y");
+    let y = value.substring(0, z);
+    let x = value.substring(z + 4, value.length);
+    return [x, y]
+}
+function e_pow_x() {
+    display.value = Math.exp(display.value);
+}
+
+var f=1;
+function change_btn() {
+    if (f) {
+        for (let element of document.getElementsByClassName('btn1-show')) {
+            element.style.display = "none";
+        }
+        for (let element of document.getElementsByClassName('btn2-show')) {
+            element.style.display = "inline-block";
+        }
+        f = 0;
+    }
+    else {
+        for (let element of document.getElementsByClassName('btn2-show')) {
+            element.style.display = "none";
+        }
+        for (let element of document.getElementsByClassName('btn1-show')) {
+            element.style.display = "inline-block";
+        }
+        f = 1;
+    }
+}
+
+var k = 1;
+function change_btn_color() {
+    if (k == 1) {
+        document.getElementById("change_btn").style.backgroundColor = "rgb(146, 199, 214)"
+        k = 0;
+    }
+    else {
+        document.getElementById("change_btn").style.backgroundColor = "#EFEFEF";
+        k = 1;
+    }
+}
+
+var memory = [];
+function m_store() {
+    enb_btn();
+    memory.push(parseFloat(display.value));
+    console.log("store")
+}
+
+function enb_btn() {
+    document.getElementById('mc').disabled = false;
+    document.getElementById('mr').disabled = false;
+}
+
+function m_clear() {
+    memory = [];
+    console.log(memory);
+    document.getElementById('mc').disabled = true;
+    document.getElementById('mr').disabled = true
+    console.log("clear")
+}
+
+function m_read() {
+    display.value = memory[memory.length - 1].toString();
+    console.log("read",diplay.value)
+}
+
+function m_plus() {
+    enb_btn();
+    console.log(memory)
+    if (memory.length == 0) {
+        memory.push(parseFloat(display.value));
+    }
+    else {
+        memory[memory.length - 1] += parseFloat(display.value);
+    }
+
+}
+
+function m_minus() {
+    enb_btn();
+    if (memory.length == 0) {
+        memory.push((-1) * parseFloat(display.value));
+    }
+    else {
+        memory[memory.length - 1] -= parseFloat(display.value);
+    }
 }

@@ -71,3 +71,7 @@ input {
 .menu-size{
     transform: translate3d(0px, 35px, 0px) !important;
 }
+
+.btn2-show{
+    display: none;
+}
