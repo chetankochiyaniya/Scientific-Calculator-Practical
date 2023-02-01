@@ -312,19 +312,19 @@ var f = 1;
 function change_btn() {
     if (f) {
         for (let element of document.getElementsByClassName('btn1-show')) {
-            element.style.d = "none";
+            element.style.display = "none";
         }
         for (let element of document.getElementsByClassName('btn2-show')) {
-            element.style.d = "inline-block";
+            element.style.display = "inline-block";
         }
         f = 0;
     }
     else {
         for (let element of document.getElementsByClassName('btn2-show')) {
-            element.style.d = "none";
+            element.style.display = "none";
         }
         for (let element of document.getElementsByClassName('btn1-show')) {
-            element.style.d = "inline-block";
+            element.style.display = "inline-block";
         }
         f = 1;
     }

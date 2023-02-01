@@ -76,7 +76,7 @@ input {
 }
 
 .btn2-show {
-    d: none;
+    display: none;
 }
 
 button:hover {
