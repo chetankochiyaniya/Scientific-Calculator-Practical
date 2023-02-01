@@ -75,3 +75,6 @@ input {
 .btn2-show{
     display: none;
 }
+button:hover {
+    background-color: rgb(146, 199, 214) !important;
+  }
