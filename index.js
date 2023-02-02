@@ -1,26 +1,34 @@
-let keys = ['1','2','3','4','5','6','7','8','9','0','+','-','*','/','%','^','(',')','.'];
+let keys = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '+', '-', '*', '/', '%', '^', '(', ')', '.'];
 document.addEventListener('keydown', (event) => {
     let k = event.key;
-    console.log(k);   
-    if(k=='Delete'){
+    if (k == 'Delete') {
         clear_val();
     }
-    if(k=='Backspace'){
+    if (k == 'Backspace') {
         back();
     }
-    if(k=='Enter'||k=='='){
-        if(d.value)
-          equal();
+    if (k == 'Enter' || k == '=') {
+        if (d.value)
+            equal();
     }
     if (keys.includes(k)) {
-        d.value += k ;
+        d.value += k;
     }
-  });
+    validate()
+});
+
+document.addEventListener("click", (event) => {
+    validate()
+})
 
 
 function elem(val) {
-    d.value += val;
-    console.log(d.value)
+    if (d.value == "invalid input") {
+        d.value = val
+    }
+    else {
+        d.value += val;
+    }
 }
 
 function equal() {
@@ -35,7 +43,6 @@ function equal() {
 
     }
     d.value = eval(d.value)
-
 }
 
 function clear_val() {
@@ -44,11 +51,10 @@ function clear_val() {
 
 function back() {
     const val = d.value;
-    console.log("back function")
     d.value = val.substr(0, val.length - 1);
 }
 
-var fact_ans = 1, num;
+let fact_ans = 1, num;
 function fact() {
     num = parseInt(d.value)
     while (num != 0) {
@@ -56,6 +62,12 @@ function fact() {
         num--;
     }
     d.value = fact_ans.toString()
+}
+
+function validate() {
+    if (d.value == "NaN" || d.value == "-Infinity") {
+        d.value = "invalid input"
+    }
 }
 
 function inverseSign() {
@@ -107,7 +119,7 @@ function pi_val() {
     d.value = Math.PI
 }
 
-var z = 1;
+let z = 1;
 function radian() {
     if (z == 1) {
         document.getElementById('degree').innerHTML = "RAD";
@@ -120,7 +132,6 @@ function radian() {
 }
 
 function trigo(t) {
-    console.log("test", t)
     switch (t) {
         case "sin":
             if (z == 1) {
@@ -276,7 +287,6 @@ function dms() {
     let deg = parseInt(dms);
     let sec = (dms.toFixed(4) - dms.toFixed(2)) * 10000;
     let min = (dms.toFixed(2) - deg) * 100;
-    console.log(sec + " " + min);
     deg = deg + min / 60 + sec / 3600;
     d.value = deg.toFixed(2).toString();
 }
@@ -308,7 +318,7 @@ function e_pow_x() {
     d.value = Math.exp(d.value);
 }
 
-var f = 1;
+let f = 1;
 function change_btn() {
     if (f) {
         for (let element of document.getElementsByClassName('btn1-show')) {
@@ -330,7 +340,7 @@ function change_btn() {
     }
 }
 
-var k = 1;
+let k = 1;
 function change_btn_color(agr) {
     if (k == 1) {
         document.getElementById("change_btn").style.backgroundColor = "rgb(0, 153, 255)"
@@ -342,11 +352,11 @@ function change_btn_color(agr) {
     }
 }
 
-var memory = [];
+let memory = [];
 function m_store() {
     enb_btn();
     memory.push(parseFloat(d.value));
-    console.log("store")
+    d.value = " ";
 }
 
 function enb_btn() {
@@ -356,20 +366,16 @@ function enb_btn() {
 
 function m_clear() {
     memory = [];
-    console.log(memory);
+    d.value = " ";
     document.getElementById('mc').disabled = true;
-    document.getElementById('mr').disabled = true
-    console.log("clear")
+    document.getElementById('mr').disabled = true;
 }
 
 function m_read() {
     d.value = memory[memory.length - 1].toString();
-    console.log("read", diplay.value)
 }
 
 function m_plus() {
-    enb_btn();
-    console.log(memory)
     if (memory.length == 0) {
         memory.push(parseFloat(d.value));
     }
@@ -380,7 +386,6 @@ function m_plus() {
 }
 
 function m_minus() {
-    enb_btn();
     if (memory.length == 0) {
         memory.push((-1) * parseFloat(d.value));
     }
@@ -389,7 +394,7 @@ function m_minus() {
     }
 }
 
-var c = 1;
+let c = 1;
 function change_color() {
     if (c == 1) {
         document.getElementById("degree").style.backgroundColor = "rgb(0, 153, 255)"
@@ -401,7 +406,7 @@ function change_color() {
     }
 }
 
-var w = 1
+let w = 1
 function fe_func() {
     if (w) {
         d.value = Number(d.value).toString();
