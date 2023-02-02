@@ -333,11 +333,11 @@ function change_btn() {
 var k = 1;
 function change_btn_color(agr) {
     if (k == 1) {
-        document.getElementById("change_btn").style.backgroundColor = "rgb(146, 199, 214)"
+        document.getElementById("change_btn").style.backgroundColor = "rgb(0, 153, 255)"
         k = 0;
     }
     else {
-        document.getElementById("change_btn").style.backgroundColor = "#EFEFEF";
+        document.getElementById("change_btn").style.backgroundColor = "rgb(0, 0, 0)";
         k = 1;
     }
 }
@@ -392,11 +392,11 @@ function m_minus() {
 var c = 1;
 function change_color() {
     if (c == 1) {
-        document.getElementById("degree").style.backgroundColor = "rgb(146, 199, 214)"
+        document.getElementById("degree").style.backgroundColor = "rgb(0, 153, 255)"
         c = 0;
     }
     else {
-        document.getElementById("degree").style.backgroundColor = "#EFEFEF";
+        document.getElementById("degree").style.backgroundColor = "rgb(0, 0, 0)";
         c = 1;
     }
 }
