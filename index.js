@@ -54,14 +54,21 @@ function back() {
     d.value = val.substr(0, val.length - 1);
 }
 
-let fact_ans = 1, num;
-function fact() {
-    num = parseInt(d.value)
-    while (num != 0) {
-        fact_ans = fact_ans * num;
-        num--;
+function getFact(n) {
+    let result = 1;
+    if (n > 1) {
+        for (let i = 1; i <= n; i++) {
+            result = result * i;
+        }
+        return result;
     }
-    d.value = fact_ans.toString()
+    else {
+        return "num should be positive";
+    }
+}
+
+function fact() {
+    d.value = getFact(parseInt(d.value)).toString();
 }
 
 function validate() {
